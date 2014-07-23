@@ -12,8 +12,7 @@ RUN npm install -g gulp
 ADD package.json /work/
 RUN cd work && npm install
 ADD . /work
-WORKDIR /work
 ENV NODE_ENV production
-CMD gulp build
+WORKDIR /work
 VOLUME /work/dist
-EXPOSE 3000
+CMD gulp build
