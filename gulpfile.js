@@ -176,9 +176,12 @@ gulp.task('serve:dist', ['default'], function () {
 });
 
 // Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('build', function (cb) {
   runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
 });
+
+// Build Production Files, the Default Task
+gulp.task('default', ['clean', 'build']);
 
 // Run PageSpeed Insights
 // Update `url` below to the public URL for your site
